@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/users/v1")
+@RequestMapping("/users")
 public class UserController {
     private final ConcurrentHashMap<Long, UserDto> data = new ConcurrentHashMap<>();
 
