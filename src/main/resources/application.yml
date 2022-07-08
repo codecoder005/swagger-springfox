@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: swagger-springfox
+  profiles:
+    active: dev, h2, strict-logging
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+

@@ -17,7 +17,7 @@ public class SwaggerSpecConfig {
     public SwaggerResourcesProvider swaggerResourcesProvider() {
         return () -> {
             List<SwaggerResource> resources = new ArrayList<>();
-            Arrays.asList("swagger-api-docs")
+            Arrays.asList("swagger-api-docs", "users-api-docs")
                     .forEach(name -> resources.add(loadResource(name)));
             return resources;
         };
