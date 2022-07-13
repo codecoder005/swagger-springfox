@@ -1,0 +1,81 @@
+swagger: "2.0"
+info:
+  title: "Swagger Petstore"
+  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "test@swagger.io"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /users:
+    get:
+      summary: "Get all users"
+      description: "Returns all users from the database."
+      operationId: "getAllUsers"
+      tags:
+        - "user"
+      produces:
+        - "application/json"
+      responses:
+        '200':
+          description: "successful operation"
+  /users/{uid}:
+    get:
+      summary: "Find user by UID"
+      description: "Returns a single user"
+      operationId: "getUserByUID"
+      tags:
+        - "user"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "uid"
+          in: "path"
+          description: "uid of user to return"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        '200':
+          description: "successful operation"
+  /users/search:
+    get:
+      summary: "Search user by firstName, lastName, email, gender, dob"
+      description: "Returns a single user that matches search criteria"
+      operationId: "searchUser"
+      tags:
+        - "user"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "firstName"
+          in: "query"
+          description: "firstName of user to return"
+          required: false
+          type: "string"
+        - name: "lastName"
+          in: "query"
+          description: "lastName of user to return"
+          required: false
+          type: "string"
+        - name: "email"
+          in: "query"
+          description: "email of user to return"
+          required: false
+          type: "string"
+        - name: "gender"
+          in: "query"
+          description: "gender of user to return"
+          required: false
+          type: "string"
+        - name: "dob"
+          in: "query"
+          description: "dob of user to return"
+          required: false
+          type: "string"
+      responses:
+        '200':
+          description: "successful operation"
